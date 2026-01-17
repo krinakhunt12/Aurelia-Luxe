@@ -14,9 +14,13 @@ const BestSellers: React.FC<BestSellersProps> = ({ isFullPage = false }) => {
   const navigate = useNavigate();
 
   const filteredPieces = useMemo(() => {
-    if (!activeCategory) return SIGNATURE_PIECES;
-    return SIGNATURE_PIECES.filter(p => p.category === activeCategory);
-  }, [activeCategory]);
+    const pieces = activeCategory
+      ? SIGNATURE_PIECES.filter(p => p.category === activeCategory)
+      : SIGNATURE_PIECES;
+
+    // Limit to 8 items on home page (isFullPage is false)
+    return isFullPage ? pieces : pieces.slice(0, 8);
+  }, [activeCategory, isFullPage]);
 
   const handleAddToCart = (product: typeof SIGNATURE_PIECES[0]) => {
     addToCart(product);
