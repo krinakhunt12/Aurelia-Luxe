@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] text-white/30 uppercase tracking-[0.2em]">
-          <p>© 2024 Aurelia Luxe Fine Jewellery. All Rights Reserved.</p>
+          <p>© 2026 Aurelia Luxe Fine Jewellery. All Rights Reserved.</p>
           <div className="flex gap-8">
             <button onClick={() => handleInfoClick('/story')} className="hover:text-white/60 transition-colors">Privacy Policy</button>
             <button onClick={() => handleInfoClick('/story')} className="hover:text-white/60 transition-colors">Terms of Service</button>
