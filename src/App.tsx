@@ -11,6 +11,8 @@ import Testimonials from './components/Testimonials';
 import InstagramSection from './components/InstagramSection';
 import Footer from './components/Footer';
 import AIStylist from './components/AIStylist';
+import CartPage from './components/CartPage';
+import ProductDetail from './components/ProductDetail';
 import SideDrawer from './components/SideDrawer';
 import AuthModal from './components/AuthModal';
 import { AppProvider, useAppContext } from './context/AppContext';
@@ -120,6 +122,8 @@ const AppContent: React.FC = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/collections" element={<CollectionsPage />} />
           <Route path="/shop" element={<ShopPage />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/cart" element={<CartPage />} />
           <Route path="/bespoke" element={<BespokePage />} />
           <Route path="/story" element={<StoryPage />} />
           <Route path="*" element={<HomePage />} />

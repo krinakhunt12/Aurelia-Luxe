@@ -1,0 +1,190 @@
+{
+  "products": [
+    {
+      "id": "prod_001",
+      "name": "Solitaire Diamond Ring",
+      "price": "$2,450",
+      "category": "Rings",
+      "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=1470&auto=format&fit=crop",
+      "description": "An elegant solitaire diamond ring featuring a 1.5 carat certified diamond set in 18K white gold. A timeless piece that epitomizes minimalist luxury and sophistication."
+    },
+    {
+      "id": "prod_002",
+      "name": "Pearl Pendant Necklace",
+      "price": "$1,850",
+      "category": "Necklaces",
+      "image": "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1470&auto=format&fit=crop",
+      "description": "Sophisticated pearl pendant on a delicate gold chain. Handpicked Akoya pearls with impeccable luster and lustrous shine."
+    },
+    {
+      "id": "prod_003",
+      "name": "Classic Diamond Studs",
+      "price": "$1,200",
+      "category": "Earrings",
+      "image": "https://images.unsplash.com/photo-1617038220319-276d3cfab638?q=80&w=1470&auto=format&fit=crop",
+      "description": "Timeless diamond stud earrings in 14K white gold. Each stone is carefully selected for brilliance and clarity."
+    },
+    {
+      "id": "prod_004",
+      "name": "Bridal Diamond Ring Set",
+      "price": "$3,950",
+      "category": "Bridal",
+      "image": "https://images.unsplash.com/photo-1515562141207-6811bcdd56f9?q=80&w=1470&auto=format&fit=crop",
+      "description": "Exquisite bridal set featuring a stunning center diamond with matching wedding band. Designed for the discerning bride."
+    },
+    {
+      "id": "prod_005",
+      "name": "Emerald Cut Diamond Ring",
+      "price": "$2,850",
+      "category": "Rings",
+      "image": "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=1470&auto=format&fit=crop",
+      "description": "Sophisticated emerald cut diamond set in platinum. A modern take on classic elegance with exceptional clarity."
+    },
+    {
+      "id": "prod_006",
+      "name": "Gold Tennis Necklace",
+      "price": "$2,200",
+      "category": "Necklaces",
+      "image": "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?q=80&w=1470&auto=format&fit=crop",
+      "description": "Stunning tennis necklace with round brilliant diamonds set in 18K yellow gold. Perfect for any occasion."
+    },
+    {
+      "id": "prod_007",
+      "name": "Drop Pearl Earrings",
+      "price": "$1,450",
+      "category": "Earrings",
+      "image": "https://images.unsplash.com/photo-1535556116002-6281ff3e9f2e?q=80&w=1470&auto=format&fit=crop",
+      "description": "Elegant drop earrings featuring lustrous South Sea pearls suspended in 14K white gold."
+    },
+    {
+      "id": "prod_008",
+      "name": "Vintage Bridal Collection",
+      "price": "$4,500",
+      "category": "Bridal",
+      "image": "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?q=80&w=1470&auto=format&fit=crop",
+      "description": "Vintage-inspired bridal collection with intricate detailing and exceptional craftsmanship. A statement piece for your special day."
+    },
+    {
+      "id": "prod_009",
+      "name": "Sapphire Halo Ring",
+      "price": "$3,200",
+      "category": "Rings",
+      "image": "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?q=80&w=1470&auto=format&fit=crop",
+      "description": "Stunning sapphire center stone surrounded by a halo of brilliant diamonds in 18K white gold."
+    },
+    {
+      "id": "prod_010",
+      "name": "Diamond Tennis Bracelet",
+      "price": "$2,950",
+      "category": "Bridal",
+      "image": "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1470&auto=format&fit=crop",
+      "description": "Elegant tennis bracelet with perfectly matched round brilliant diamonds set in platinum."
+    },
+    {
+      "id": "prod_011",
+      "name": "Moonstone Pendant",
+      "price": "$1,650",
+      "category": "Necklaces",
+      "image": "https://images.unsplash.com/photo-1634666511012-4f57a4f39f92?q=80&w=1470&auto=format&fit=crop",
+      "description": "Ethereal moonstone pendant with a soft glow, set in rose gold. A mystical and elegant piece."
+    },
+    {
+      "id": "prod_012",
+      "name": "Ruby & Diamond Earrings",
+      "price": "$1,800",
+      "category": "Earrings",
+      "image": "https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=1470&auto=format&fit=crop",
+      "description": "Vibrant ruby gemstones accented with brilliant diamonds in 14K white gold."
+    },
+    {
+      "id": "prod_013",
+      "name": "Cushion Cut Diamond Ring",
+      "price": "$2,750",
+      "category": "Rings",
+      "image": "https://images.unsplash.com/photo-1588444650785-9c6e6bbe65bf?q=80&w=1470&auto=format&fit=crop",
+      "description": "Sophisticated cushion cut diamond with a thick halo of white diamonds in platinum setting."
+    },
+    {
+      "id": "prod_014",
+      "name": "Gold Layered Necklace",
+      "price": "$1,250",
+      "category": "Necklaces",
+      "image": "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?q=80&w=1470&auto=format&fit=crop",
+      "description": "Delicate layered necklace in 18K yellow gold with adjustable lengths for a modern look."
+    },
+    {
+      "id": "prod_015",
+      "name": "Diamond Chandelier Earrings",
+      "price": "$2,100",
+      "category": "Earrings",
+      "image": "https://images.unsplash.com/photo-1629810950886-0ef5568b6317?q=80&w=1470&auto=format&fit=crop",
+      "description": "Dramatic chandelier-style earrings with cascading diamonds for a luxurious evening look."
+    },
+    {
+      "id": "prod_016",
+      "name": "Three Stone Bridal Ring",
+      "price": "$3,850",
+      "category": "Bridal",
+      "image": "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?q=80&w=1470&auto=format&fit=crop",
+      "description": "Iconic three-stone engagement ring symbolizing past, present, and future in 18K gold."
+    },
+    {
+      "id": "prod_017",
+      "name": "Opal Statement Ring",
+      "price": "$2,300",
+      "category": "Rings",
+      "image": "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1470&auto=format&fit=crop",
+      "description": "Iridescent opal gemstone set in oxidized silver with diamond accents. A unique statement piece."
+    },
+    {
+      "id": "prod_018",
+      "name": "Gold & Pearl Necklace",
+      "price": "$1,500",
+      "category": "Necklaces",
+      "image": "https://images.unsplash.com/photo-1601821765780-754fa98637c1?q=80&w=1470&auto=format&fit=crop",
+      "description": "Timeless combination of lustrous South Sea pearls with 18K yellow gold settings."
+    },
+    {
+      "id": "prod_019",
+      "name": "Black Diamond Studs",
+      "price": "$1,950",
+      "category": "Earrings",
+      "image": "https://images.unsplash.com/photo-1609251297580-9f3d6e4cd2b6?q=80&w=1470&auto=format&fit=crop",
+      "description": "Bold black diamond studs set in white gold. Perfect for adding edge and sophistication."
+    },
+    {
+      "id": "prod_020",
+      "name": "Princess Cut Bridal Set",
+      "price": "$4,200",
+      "category": "Bridal",
+      "image": "https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=1470&auto=format&fit=crop",
+      "description": "Contemporary princess cut ring with matching wedding band. Modern elegance meets timeless style."
+    }
+  ],
+  "collections": [
+    {
+      "id": "col_001",
+      "title": "Rings",
+      "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=1470&auto=format&fit=crop",
+      "path": "/collections/rings"
+    },
+    {
+      "id": "col_002",
+      "title": "Necklaces",
+      "image": "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?q=80&w=1470&auto=format&fit=crop",
+      "path": "/collections/necklaces"
+    },
+    {
+      "id": "col_003",
+      "title": "Earrings",
+      "image": "https://images.unsplash.com/photo-1535556116002-6281ff3e9f2e?q=80&w=1470&auto=format&fit=crop",
+      "path": "/collections/earrings"
+    },
+    {
+      "id": "col_004",
+      "title": "Bridal",
+      "image": "https://images.unsplash.com/photo-1515562141207-6811bcdd56f9?q=80&w=1470&auto=format&fit=crop",
+      "path": "/collections/bridal"
+    }
+  ]
+}

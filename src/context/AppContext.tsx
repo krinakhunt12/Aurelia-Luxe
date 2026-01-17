@@ -1,6 +1,10 @@
 
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, type ReactNode } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import type { Product } from '../types';
+import type { RootState } from '../store';
+import { addToCart as reduxAddToCart, removeFromCart as reduxRemoveFromCart } from '../store/cartSlice';
+import { toggleWishlist as reduxToggleWishlist } from '../store/wishlistSlice';
 
 interface User {
   email: string;
@@ -11,7 +15,7 @@ interface AppContextType {
   user: User | null;
   login: (email: string, name: string) => void;
   logout: () => void;
-  cart: Product[];
+  cart: any[];
   addToCart: (product: Product) => void;
   removeFromCart: (productId: string) => void;
   wishlist: Product[];
@@ -33,13 +37,16 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
-  const [cart, setCart] = useState<Product[]>([]);
-  const [wishlist, setWishlist] = useState<Product[]>([]);
   const [isCartOpen, setCartOpen] = useState(false);
   const [isWishlistOpen, setWishlistOpen] = useState(false);
   const [isAuthModalOpen, setAuthModalOpen] = useState(false);
   const [authMode, setAuthMode] = useState<'login' | 'signup'>('login');
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+
+  // Redux selectors and dispatch
+  const dispatch = useDispatch();
+  const cart = useSelector((state: RootState) => state.cart.items);
+  const wishlist = useSelector((state: RootState) => state.wishlist.items);
 
   const login = (email: string, name: string) => {
     setUser({ email, name });
@@ -49,22 +56,16 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
   const logout = () => setUser(null);
 
   const addToCart = (product: Product) => {
-    setCart((prev) => [...prev, product]);
+    dispatch(reduxAddToCart(product));
     setCartOpen(true);
   };
 
   const removeFromCart = (productId: string) => {
-    setCart((prev) => prev.filter((item) => item.id !== productId));
+    dispatch(reduxRemoveFromCart(productId));
   };
 
   const toggleWishlist = (product: Product) => {
-    setWishlist((prev) => {
-      const exists = prev.find((item) => item.id === product.id);
-      if (exists) {
-        return prev.filter((item) => item.id !== product.id);
-      }
-      return [...prev, product];
-    });
+    dispatch(reduxToggleWishlist(product));
   };
 
   const isInWishlist = (productId: string) => {

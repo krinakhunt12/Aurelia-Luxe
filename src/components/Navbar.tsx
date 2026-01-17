@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, Search, ShoppingBag, Heart, X } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
 
@@ -13,7 +13,6 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, darkTheme }) => {
   const { 
     cart, 
     wishlist, 
-    setCartOpen, 
     setWishlistOpen, 
     user, 
     setAuthModalOpen,
@@ -117,7 +116,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, darkTheme }) => {
           </button>
 
           <button 
-            onClick={() => setCartOpen(true)}
+            onClick={() => window.location.href = '/cart'}
             className="hover:opacity-70 transition-opacity flex items-center gap-1 group"
           >
             <ShoppingBag size={20} strokeWidth={1.5} />
