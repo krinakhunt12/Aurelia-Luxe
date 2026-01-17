@@ -12,7 +12,7 @@ export const getJewelryStylingAdvice = async (userInput: string, preferences: st
         systemInstruction: "You are the Aurelia Luxe AI Concierge. You are helpful, sophisticated, and expert in fine jewelry, diamonds, and minimalist aesthetics. Keep responses under 100 words.",
       },
     });
-    return response.text;
+    return response.text || "Our concierge is momentarily unavailable. Please reach out to our human specialists for immediate assistance.";
   } catch (error) {
     console.error("Gemini Error:", error);
     return "Our concierge is momentarily unavailable. Please reach out to our human specialists for immediate assistance.";

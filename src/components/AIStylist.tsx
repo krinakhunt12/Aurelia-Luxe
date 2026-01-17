@@ -28,8 +28,8 @@ const AIStylist: React.FC = () => {
     setLoading(true);
 
     const aiResponse = await getJewelryStylingAdvice(userMessage, "Luxury, minimal, elegant, platinum lovers");
-    
-    setMessages(prev => [...prev, { role: 'ai', text: aiResponse }]);
+
+    setMessages(prev => [...prev, { role: 'ai', text: aiResponse || "Our concierge is momentary unavailable. Please try again." }]);
     setLoading(false);
   };
 
@@ -37,7 +37,7 @@ const AIStylist: React.FC = () => {
     <div className="fixed bottom-8 right-8 z-[60]">
       {/* Trigger Button */}
       {!isOpen && (
-        <button 
+        <button
           onClick={() => setIsOpen(true)}
           className="group relative flex items-center justify-center w-16 h-16 bg-[#0F0F0F] text-white rounded-full shadow-2xl transition-all duration-500 hover:scale-110 active:scale-95 border border-white/10"
         >
@@ -61,17 +61,16 @@ const AIStylist: React.FC = () => {
             </button>
           </div>
 
-          <div 
+          <div
             ref={scrollRef}
             className="flex-grow p-6 overflow-y-auto space-y-6 bg-[#FAFAFA]"
           >
             {messages.map((m, idx) => (
               <div key={idx} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                <div className={`max-w-[85%] p-4 text-[13px] leading-relaxed shadow-sm ${
-                  m.role === 'user' 
-                  ? 'bg-[#0F0F0F] text-white' 
-                  : 'bg-white text-[#2B2B2B] border border-black/5'
-                }`}>
+                <div className={`max-w-[85%] p-4 text-[13px] leading-relaxed shadow-sm ${m.role === 'user'
+                    ? 'bg-[#0F0F0F] text-white'
+                    : 'bg-white text-[#2B2B2B] border border-black/5'
+                  }`}>
                   {m.text}
                 </div>
               </div>
@@ -86,13 +85,13 @@ const AIStylist: React.FC = () => {
           </div>
 
           <form onSubmit={handleSendMessage} className="p-4 bg-white border-t border-black/5 flex gap-2">
-            <input 
+            <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Ask for styling advice..."
               className="flex-grow bg-transparent text-[13px] py-2 focus:outline-none placeholder:text-black/30"
             />
-            <button 
+            <button
               type="submit"
               disabled={loading}
               className="text-[#0F0F0F] disabled:opacity-30 hover:opacity-60 transition-opacity"

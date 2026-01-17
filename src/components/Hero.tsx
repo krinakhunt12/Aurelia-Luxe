@@ -9,20 +9,11 @@ const Hero: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    const elem = document.getElementById(id);
-    if (elem) {
-      window.scrollTo({
-        top: elem.offsetTop - 80,
-        behavior: 'smooth'
-      });
-    }
-  };
 
   return (
     <section id="hero" className="relative h-screen min-h-[700px] w-full bg-[#0F0F0F] flex items-center justify-center overflow-hidden z-10">
       {/* Background Image Layer */}
-      <div 
+      <div
         className={`absolute inset-0 z-0 transition-transform duration-[10000ms] ease-out ${isVisible ? 'scale-100' : 'scale-110'}`}
         style={{
           backgroundImage: 'url("https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=2000&auto=format&fit=crop")',
@@ -31,21 +22,21 @@ const Hero: React.FC = () => {
           filter: 'brightness(0.4) contrast(1.1)'
         }}
       />
-      
+
       {/* Dynamic Light Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0F0F0F]/10 to-[#0F0F0F] z-[1]" />
 
       <div className="relative z-10 container mx-auto px-6 flex flex-col items-center">
         {/* Floating High-End Product Image with Animation */}
         <div className={`mb-12 transition-all duration-1000 delay-300 transform ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'}`}>
-           <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(255,255,255,0.1)]">
-              <img 
-                src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=1000&auto=format&fit=crop" 
-                alt="Signature Diamond Piece" 
-                className="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700 scale-110 hover:scale-100"
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#0F0F0F]/40 to-transparent" />
-           </div>
+          <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(255,255,255,0.1)]">
+            <img
+              src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=1000&auto=format&fit=crop"
+              alt="Signature Diamond Piece"
+              className="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700 scale-110 hover:scale-100"
+            />
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#0F0F0F]/40 to-transparent" />
+          </div>
         </div>
 
         <div className={`text-center text-white transition-all duration-1000 delay-500 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -56,9 +47,9 @@ const Hero: React.FC = () => {
             Timeless Craftsmanship. <br />
             <span className="italic font-normal">Modern Elegance.</span>
           </h2>
-          
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-4">
-            <button 
+            <button
               onClick={() => (window.location.hash = '#/collections')}
               className="group relative px-12 py-5 overflow-hidden transition-all duration-500"
             >
@@ -68,8 +59,8 @@ const Hero: React.FC = () => {
                 Explore Collection
               </span>
             </button>
-            
-            <button 
+
+            <button
               onClick={() => (window.location.hash = '#/bespoke')}
               className="px-12 py-5 text-[11px] uppercase tracking-[0.3em] text-white/60 hover:text-white transition-all duration-500 border border-white/10 hover:border-white/30"
             >
