@@ -9,9 +9,9 @@ export const COLORS = {
 };
 
 export const COLLECTIONS: Collection[] = [
-  { id: 'col_001', title: 'Rings', image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1470&auto=format&fit=crop', path: '/collections/rings' },
-  { id: 'col_002', title: 'Necklaces', image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1470&auto=format&fit=crop', path: '/collections/necklaces' },
-  { id: 'col_003', title: 'Earrings', image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1470&auto=format&fit=crop', path: '/collections/earrings' },
+  { id: 'col_001', title: 'Rings', image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=1470&auto=format&fit=crop', path: '/collections/rings' },
+  { id: 'col_002', title: 'Necklaces', image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?q=80&w=1470&auto=format&fit=crop', path: '/collections/necklaces' },
+  { id: 'col_003', title: 'Earrings', image: 'https://images.unsplash.com/photo-1535556116002-6281ff3e9f2e?q=80&w=1470&auto=format&fit=crop', path: '/collections/earrings' },
   { id: 'col_004', title: 'Bridal', image: 'https://images.unsplash.com/photo-1515562141207-6811bcdd56f9?q=80&w=1470&auto=format&fit=crop', path: '/collections/bridal' },
 ];
 
@@ -21,7 +21,7 @@ export const SIGNATURE_PIECES: Product[] = [
     name: 'Solitaire Diamond Ring',
     price: '$2,450',
     category: 'Rings',
-    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1470&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1584302179602-e4c3d3fd629d?q=80&w=1470&auto=format&fit=crop',
     description: 'An elegant solitaire diamond ring featuring a 1.5 carat certified diamond set in 18K white gold. A timeless piece that epitomizes minimalist luxury and sophistication.'
   },
   {
@@ -29,7 +29,7 @@ export const SIGNATURE_PIECES: Product[] = [
     name: 'Pearl Pendant Necklace',
     price: '$1,850',
     category: 'Necklaces',
-    image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1470&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1470&auto=format&fit=crop',
     description: 'Sophisticated pearl pendant on a delicate gold chain. Handpicked Akoya pearls with impeccable luster and lustrous shine.'
   },
   {
@@ -37,7 +37,7 @@ export const SIGNATURE_PIECES: Product[] = [
     name: 'Classic Diamond Studs',
     price: '$1,200',
     category: 'Earrings',
-    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1300&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1617038220319-276d3cfab638?q=80&w=1470&auto=format&fit=crop',
     description: 'Timeless diamond stud earrings in 14K white gold. Each stone is carefully selected for brilliance and clarity.'
   },
   {
@@ -45,7 +45,7 @@ export const SIGNATURE_PIECES: Product[] = [
     name: 'Bridal Diamond Ring Set',
     price: '$3,950',
     category: 'Bridal',
-    image: 'https://images.unsplash.com/photo-1515562141207-6811bcdd56f9?q=80&w=1470&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?q=80&w=1470&auto=format&fit=crop',
     description: 'Exquisite bridal set featuring a stunning center diamond with matching wedding band. Designed for the discerning bride.'
   },
   {
@@ -53,7 +53,7 @@ export const SIGNATURE_PIECES: Product[] = [
     name: 'Emerald Cut Diamond Ring',
     price: '$2,850',
     category: 'Rings',
-    image: 'https://images.unsplash.com/photo-1515377905703-c28bbc4b7e38?q=80&w=1470&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=1470&auto=format&fit=crop',
     description: 'Sophisticated emerald cut diamond set in platinum. A modern take on classic elegance with exceptional clarity.'
   },
   {
@@ -61,7 +61,7 @@ export const SIGNATURE_PIECES: Product[] = [
     name: 'Gold Tennis Necklace',
     price: '$2,200',
     category: 'Necklaces',
-    image: 'https://images.unsplash.com/photo-1515905035918-90b6b6e1e6b9?q=80&w=1470&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?q=80&w=1470&auto=format&fit=crop',
     description: 'Stunning tennis necklace with round brilliant diamonds set in 18K yellow gold. Perfect for any occasion.'
   },
   {
@@ -69,7 +69,7 @@ export const SIGNATURE_PIECES: Product[] = [
     name: 'Drop Pearl Earrings',
     price: '$1,450',
     category: 'Earrings',
-    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1300&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1591209695842-8877e682662c?q=80&w=1470&auto=format&fit=crop',
     description: 'Elegant drop earrings featuring lustrous South Sea pearls suspended in 14K white gold.'
   },
   {
@@ -77,7 +77,7 @@ export const SIGNATURE_PIECES: Product[] = [
     name: 'Vintage Bridal Collection',
     price: '$4,500',
     category: 'Bridal',
-    image: 'https://images.unsplash.com/photo-1515377905703-c28bbc4b7e38?q=80&w=1470&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?q=80&w=1470&auto=format&fit=crop',
     description: 'Vintage-inspired bridal collection with intricate detailing and exceptional craftsmanship. A statement piece for your special day.'
   },
   {
@@ -85,7 +85,7 @@ export const SIGNATURE_PIECES: Product[] = [
     name: 'Sapphire Halo Ring',
     price: '$3,200',
     category: 'Rings',
-    image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1470&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?q=80&w=1470&auto=format&fit=crop',
     description: 'Stunning sapphire center stone surrounded by a halo of brilliant diamonds in 18K white gold.'
   },
   {
@@ -93,7 +93,7 @@ export const SIGNATURE_PIECES: Product[] = [
     name: 'Diamond Tennis Bracelet',
     price: '$2,950',
     category: 'Bridal',
-    image: 'https://images.unsplash.com/photo-1515905035918-90b6b6e1e6b9?q=80&w=1470&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=1470&auto=format&fit=crop',
     description: 'Elegant tennis bracelet with perfectly matched round brilliant diamonds set in platinum.'
   },
   {
@@ -101,7 +101,7 @@ export const SIGNATURE_PIECES: Product[] = [
     name: 'Moonstone Pendant',
     price: '$1,650',
     category: 'Necklaces',
-    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1470&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1634666511012-4f57a4f39f92?q=80&w=1470&auto=format&fit=crop',
     description: 'Ethereal moonstone pendant with a soft glow, set in rose gold. A mystical and elegant piece.'
   },
   {
@@ -109,7 +109,7 @@ export const SIGNATURE_PIECES: Product[] = [
     name: 'Ruby & Diamond Earrings',
     price: '$1,800',
     category: 'Earrings',
-    image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1300&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1601121141461-9d6647b9170b?q=80&w=1470&auto=format&fit=crop',
     description: 'Vibrant ruby gemstones accented with brilliant diamonds in 14K white gold.'
   },
   {
@@ -117,7 +117,7 @@ export const SIGNATURE_PIECES: Product[] = [
     name: 'Cushion Cut Diamond Ring',
     price: '$2,750',
     category: 'Rings',
-    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1470&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1588444650785-9c6e6bbe65bf?q=80&w=1470&auto=format&fit=crop',
     description: 'Sophisticated cushion cut diamond with a thick halo of white diamonds in platinum setting.'
   },
   {
@@ -125,7 +125,7 @@ export const SIGNATURE_PIECES: Product[] = [
     name: 'Gold Layered Necklace',
     price: '$1,250',
     category: 'Necklaces',
-    image: 'https://images.unsplash.com/photo-1515377905703-c28bbc4b7e38?q=80&w=1470&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1611085583191-a3b1a30a5af4?q=80&w=1470&auto=format&fit=crop',
     description: 'Delicate layered necklace in 18K yellow gold with adjustable lengths for a modern look.'
   },
   {
@@ -133,7 +133,7 @@ export const SIGNATURE_PIECES: Product[] = [
     name: 'Diamond Chandelier Earrings',
     price: '$2,100',
     category: 'Earrings',
-    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1300&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1629810950886-0ef5568b6317?q=80&w=1470&auto=format&fit=crop',
     description: 'Dramatic chandelier-style earrings with cascading diamonds for a luxurious evening look.'
   },
   {
@@ -141,7 +141,7 @@ export const SIGNATURE_PIECES: Product[] = [
     name: 'Three Stone Bridal Ring',
     price: '$3,850',
     category: 'Bridal',
-    image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1470&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1512163143273-bde0e3cc7407?q=80&w=1470&auto=format&fit=crop',
     description: 'Iconic three-stone engagement ring symbolizing past, present, and future in 18K gold.'
   },
   {
@@ -149,7 +149,7 @@ export const SIGNATURE_PIECES: Product[] = [
     name: 'Opal Statement Ring',
     price: '$2,300',
     category: 'Rings',
-    image: 'https://images.unsplash.com/photo-1515905035918-90b6b6e1e6b9?q=80&w=1470&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1470&auto=format&fit=crop',
     description: 'Iridescent opal gemstone set in oxidized silver with diamond accents. A unique statement piece.'
   },
   {
@@ -157,7 +157,7 @@ export const SIGNATURE_PIECES: Product[] = [
     name: 'Gold & Pearl Necklace',
     price: '$1,500',
     category: 'Necklaces',
-    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1470&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1601821765780-754fa98637c1?q=80&w=1470&auto=format&fit=crop',
     description: 'Timeless combination of lustrous South Sea pearls with 18K yellow gold settings.'
   },
   {
@@ -165,7 +165,7 @@ export const SIGNATURE_PIECES: Product[] = [
     name: 'Black Diamond Studs',
     price: '$1,950',
     category: 'Earrings',
-    image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1300&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1609251297580-9f3d6e4cd2b6?q=80&w=1470&auto=format&fit=crop',
     description: 'Bold black diamond studs set in white gold. Perfect for adding edge and sophistication.'
   },
   {
@@ -173,8 +173,88 @@ export const SIGNATURE_PIECES: Product[] = [
     name: 'Princess Cut Bridal Set',
     price: '$4,200',
     category: 'Bridal',
-    image: 'https://images.unsplash.com/photo-1515377905703-c28bbc4b7e38?q=80&w=1470&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=1470&auto=format&fit=crop',
     description: 'Contemporary princess cut ring with matching wedding band. Modern elegance meets timeless style.'
+  },
+  {
+    id: 'prod_021',
+    name: 'Rose Gold Eternity Band',
+    price: '$1,350',
+    category: 'Rings',
+    image: 'https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?q=80&w=1470&auto=format&fit=crop',
+    description: 'Sophisticated eternity band crafted in 18K rose gold, handset with brilliant cut diamonds.'
+  },
+  {
+    id: 'prod_022',
+    name: 'Aquamarine Drop Necklace',
+    price: '$2,100',
+    category: 'Necklaces',
+    image: 'https://images.unsplash.com/photo-1515377905703-c28bbc4b7e38?q=80&w=1470&auto=format&fit=crop',
+    description: 'A serene aquamarine pendant suspended from a white gold chain, accented with micro-diamonds.'
+  },
+  {
+    id: 'prod_023',
+    name: 'Golden Hoop Earrings',
+    price: '$850',
+    category: 'Earrings',
+    image: 'https://images.unsplash.com/photo-1635767798638-3e25273a8236?q=80&w=1470&auto=format&fit=crop',
+    description: 'Classic handcrafted 14K gold hoop earrings with a textured finish for modern appeal.'
+  },
+  {
+    id: 'prod_024',
+    name: 'Art Deco Engagement Ring',
+    price: '$5,400',
+    category: 'Bridal',
+    image: 'https://images.unsplash.com/photo-1616038144002-39bd927cd728?q=80&w=1470&auto=format&fit=crop',
+    description: 'Vintage-inspired Art Deco design featuring a center diamond with geometric sapphire accents.'
+  },
+  {
+    id: 'prod_025',
+    name: 'Amethyst Statement Ring',
+    price: '$1,950',
+    category: 'Rings',
+    image: 'https://images.unsplash.com/photo-1515905035918-90b6b6e1e6b9?q=80&w=1470&auto=format&fit=crop',
+    description: 'Deep violet amethyst gemstone set in a sculptural yellow gold mounting.'
+  },
+  {
+    id: 'prod_026',
+    name: 'Diamond Lariat Necklace',
+    price: '$2,800',
+    category: 'Necklaces',
+    image: 'https://images.unsplash.com/photo-1573408339379-b941275ca8f1?q=80&w=1470&auto=format&fit=crop',
+    description: 'A graceful lariat necklace featuring diamond-encrusted ends in 18K white gold.'
+  },
+  {
+    id: 'prod_027',
+    name: 'Emerald Stud Earrings',
+    price: '$2,350',
+    category: 'Earrings',
+    image: 'https://images.unsplash.com/photo-1626495531063-e991572c6742?q=80&w=1470&auto=format&fit=crop',
+    description: 'Vivid green Colombian emeralds set in a minimalist four-prong yellow gold setting.'
+  },
+  {
+    id: 'prod_028',
+    name: 'Modernist Cuff Bracelet',
+    price: '$1,600',
+    category: 'Bridal',
+    image: 'https://images.unsplash.com/photo-1563205738-96f731c50493?q=80&w=1470&auto=format&fit=crop',
+    description: 'Sleek architectural cuff in brushed sterling silver with a single flush-set diamond.'
+  },
+  {
+    id: 'prod_029',
+    name: 'Morganite Halo Ring',
+    price: '$2,650',
+    category: 'Rings',
+    image: 'https://images.unsplash.com/photo-1598560917505-59a3ad559071?q=80&w=1470&auto=format&fit=crop',
+    description: 'Romance captured in a blush pink morganite stone surrounded by a delicate diamond halo.'
+  },
+  {
+    id: 'prod_030',
+    name: 'Starry Night Pendant',
+    price: '$1,450',
+    category: 'Necklaces',
+    image: 'https://images.unsplash.com/photo-1633467828614-38a7ca295ba1?q=80&w=1470&auto=format&fit=crop',
+    description: 'A circular pendant featuring multi-colored gemstones representing a stellar constellation.'
   }
 ];
 
@@ -182,4 +262,6 @@ export const TESTIMONIALS: Testimonial[] = [
   { id: 1, text: "The attention to detail in every piece is unparalleled. It truly is a work of art.", author: "Eleanor Vance", location: "London" },
   { id: 2, text: "AURELIA LUXE understands that luxury is found in simplicity. My bridal set is timeless.", author: "Sophia Moretti", location: "Milan" },
   { id: 3, text: "Exceptional service and exquisite craftsmanship. The custom consultation was a breeze.", author: "James Sterling", location: "New York" },
+  { id: 4, text: "The bespoke process was incredible. I finally have a piece that tells my own story.", author: "Isabella Rossi", location: "Florence" },
+  { id: 5, text: "Stunning designs and the quality of stones is top-notch. Highly recommended for special occasions.", author: "Marcus Aurelius", location: "Rome" },
 ];
