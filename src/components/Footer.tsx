@@ -52,8 +52,8 @@ const Footer: React.FC = () => {
             <h4 className="text-[11px] uppercase tracking-[0.3em] font-medium mb-8 text-white/90">Collections</h4>
             <ul className="space-y-4 text-[13px] text-[#B5B5B5] font-light">
               <li><button onClick={() => handleCategoryClick(null)} className="hover:text-white transition-colors">All Jewelry</button></li>
-              <li><button onClick={() => handleCategoryClick('Bridal')} className="hover:text-white transition-colors">Engagement Rings</button></li>
-              <li><button onClick={() => handleCategoryClick('Bridal')} className="hover:text-white transition-colors">Wedding Bands</button></li>
+              <li><button onClick={() => handleCategoryClick('Bracelets')} className="hover:text-white transition-colors">Tennis Bracelets</button></li>
+              <li><button onClick={() => handleCategoryClick('Bracelets')} className="hover:text-white transition-colors">Bangles & Cuffs</button></li>
               <li><button onClick={() => handleCategoryClick('Necklaces')} className="hover:text-white transition-colors">Necklaces & Pendants</button></li>
               <li><button onClick={() => handleCategoryClick('Earrings')} className="hover:text-white transition-colors">Earrings</button></li>
             </ul>
@@ -65,9 +65,9 @@ const Footer: React.FC = () => {
               Subscribe to receive updates on new collections and exclusive events.
             </p>
             <form onSubmit={(e) => e.preventDefault()} className="flex">
-              <input 
-                type="email" 
-                placeholder="Email Address" 
+              <input
+                type="email"
+                placeholder="Email Address"
                 className="bg-transparent border-b border-white/20 py-2 text-[13px] focus:outline-none focus:border-white transition-all duration-500 flex-grow"
               />
               <button className="border-b border-white/20 px-4 py-2 text-[10px] uppercase tracking-[0.2em] hover:text-white/60 transition-colors">

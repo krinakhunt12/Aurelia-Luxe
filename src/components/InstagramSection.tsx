@@ -2,12 +2,12 @@
 import React from 'react';
 
 const IMAGES = [
-  "https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=1470&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1588444837495-c6cfaf50c8a9?q=80&w=1374&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1596460107916-430662021049?q=80&w=1470&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1512163143273-bde0e3cc7407?q=80&w=1470&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?q=80&w=1374&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1598560917505-59a3ad559071?q=80&w=1374&auto=format&fit=crop"
+  "https://i.pinimg.com/736x/5c/4d/84/5c4d848fcc2b7e062bf6da45b9daad47.jpg",
+  "https://i.pinimg.com/1200x/b0/4c/3f/b04c3f3bc0124a3919bc7136e212d7a7.jpg",
+  "https://i.pinimg.com/1200x/04/e8/bd/04e8bde7ebd68c249a196cdc0f55011b.jpg",
+  "https://i.pinimg.com/736x/51/78/65/517865b041fbe9630aa6b9e3e4f7f68d.jpg",
+  "https://i.pinimg.com/736x/4e/42/93/4e4293e01b404dfdd6614bb7a0e53fc1.jpg",
+  "https://i.pinimg.com/1200x/5e/0d/b6/5e0db698d88eebe6f0ce10a48adec048.jpg"
 ];
 
 const InstagramSection: React.FC = () => {

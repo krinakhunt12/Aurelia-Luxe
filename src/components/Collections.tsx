@@ -21,7 +21,7 @@ const Collections: React.FC<CollectionsProps> = ({ isFullPage = false }) => {
     if (path.includes('rings')) return 'Rings';
     if (path.includes('necklaces')) return 'Necklaces';
     if (path.includes('earrings')) return 'Earrings';
-    if (path.includes('bridal')) return 'Bridal';
+    if (path.includes('bracelets')) return 'Bracelets';
     return null;
   };
 
@@ -36,7 +36,7 @@ const Collections: React.FC<CollectionsProps> = ({ isFullPage = false }) => {
                 Discover pieces that speak to the heart, meticulously crafted with rare gemstones and precious metals.
               </p>
             </div>
-            <button 
+            <button
               onClick={() => navigate('/collections')}
               className="group flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] self-start md:self-auto"
             >
@@ -48,13 +48,13 @@ const Collections: React.FC<CollectionsProps> = ({ isFullPage = false }) => {
 
         <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-${isFullPage ? '3' : '4'} gap-8`}>
           {COLLECTIONS.map((collection) => (
-            <button 
-              key={collection.id} 
+            <button
+              key={collection.id}
               onClick={() => handleCategoryClick(getCategoryFromPath(collection.path))}
               className="group relative block overflow-hidden aspect-[3/4] bg-[#F5F5F5] text-left"
             >
-              <img 
-                src={collection.image} 
+              <img
+                src={collection.image}
                 alt={collection.title}
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale-[0.3] group-hover:grayscale-0"
               />

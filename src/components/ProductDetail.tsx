@@ -8,6 +8,15 @@ const ProductDetail: React.FC = () => {
     const navigate = useNavigate();
     const { addToCart, toggleWishlist, isInWishlist } = useAppContext();
     const [quantity, setQuantity] = React.useState(1);
+    const [zoomPos, setZoomPos] = React.useState({ x: 50, y: 50 });
+    const [isZoomed, setIsZoomed] = React.useState(false);
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+        const x = ((e.clientX - left) / width) * 100;
+        const y = ((e.clientY - top) / height) * 100;
+        setZoomPos({ x, y });
+    };
 
     const product = useMemo(() => {
         return SIGNATURE_PIECES.find(p => p.id === id) || null;
@@ -63,12 +72,26 @@ const ProductDetail: React.FC = () => {
                 {/* Product Details */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
                     {/* Product Image */}
-                    <div className="flex items-center justify-center bg-[#FBFBFB] min-h-[600px] rounded-lg overflow-hidden">
+                    <div
+                        className="relative flex items-center justify-center bg-[#FBFBFB] h-[500px] md:h-[700px] rounded-lg overflow-hidden cursor-zoom-in group"
+                        onMouseMove={handleMouseMove}
+                        onMouseEnter={() => setIsZoomed(true)}
+                        onMouseLeave={() => setIsZoomed(false)}
+                    >
                         <img
                             src={product.image}
                             alt={product.name}
-                            className="w-full h-full object-cover"
+                            className={`w-full h-full object-cover transition-transform duration-200 ease-out pointer-events-none ${isZoomed ? 'scale-[2.5]' : 'scale-100'
+                                }`}
+                            style={{
+                                transformOrigin: `${zoomPos.x}% ${zoomPos.y}%`
+                            }}
                         />
+                        {!isZoomed && (
+                            <div className="absolute bottom-6 right-6 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-[9px] uppercase tracking-[0.2em] font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                                Hover to zoom
+                            </div>
+                        )}
                     </div>
 
                     {/* Product Info */}
@@ -158,8 +181,8 @@ const ProductDetail: React.FC = () => {
                             <button
                                 onClick={handleWishlist}
                                 className={`flex items-center gap-2 px-6 py-3 border transition-all text-[10px] uppercase tracking-[0.2em] ${isInWishlist(product.id)
-                                        ? 'border-red-500 bg-red-50 text-red-500'
-                                        : 'border-[#E5E5E5] hover:border-[#0F0F0F]'
+                                    ? 'border-red-500 bg-red-50 text-red-500'
+                                    : 'border-[#E5E5E5] hover:border-[#0F0F0F]'
                                     }`}
                             >
                                 <Heart
