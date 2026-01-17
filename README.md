@@ -1,53 +1,118 @@
-# React + TypeScript + Vite
+# Aurelia Luxe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, elegant frontend e-commerce platform for luxury jewelry featuring AI-powered styling advice and a premium shopping experience.
 
-Currently, two official plugins are available:
+## ⚠️ Note
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Currently, this is a **frontend-only** application. Backend integration and payment processing features will be added in future releases.
 
-## React Compiler
+## 🌟 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **AI Stylist**: Integrated Google Gemini API for personalized jewelry styling recommendations
+- **Product Collections**: Browse curated collections (Rings, Necklaces, Earrings, Bridal)
+- **Shopping Cart & Wishlist**: Full cart management and wishlist functionality
+- **User Authentication**: Login/signup modal for user accounts
+- **Responsive Design**: Mobile-first design with Tailwind CSS
+- **Modern Tech Stack**: React 19, TypeScript, Vite, and React Router
 
-## Expanding the ESLint configuration
+## 🚀 Quick Start
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+```bash
+# Clone the repository
+git clone <repository-url>
+cd Aurelia-Luxe
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Install dependencies
+npm install
+
+# Create .env file with your API key
+echo 'VITE_API_KEY=your_google_genai_api_key_here' > .env
+
+# Start development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The app will be available at `http://localhost:5173`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
+## 📦 Dependencies
+
+- **React**: UI library
+- **TypeScript**: Type safety
+- **Vite**: Build tool and dev server
+- **Tailwind CSS**: Utility-first CSS framework
+- **React Router DOM**: Client-side routing
+- **Lucide React**: Icon library
+- **@google/genai**: AI styling recommendations
+
+## 📁 Project Structure
+
+```
+src/
+├── components/        # React components
+│   ├── Navbar.tsx
+│   ├── Hero.tsx
+│   ├── Collections.tsx
+│   ├── BestSellers.tsx
+│   ├── AIStylist.tsx
+│   ├── Footer.tsx
+│   └── ...
+├── context/          # App context for state management
+│   └── AppContext.tsx
+├── services/         # API services
+│   └── gemini.ts     # Google Gemini API integration
+├── types.ts          # TypeScript interfaces
+├── App.tsx           # Main app component
+├── main.tsx          # Entry point
+└── index.css         # Global styles
+```
+
+## 🔧 Scripts
+
+```bash
+# Development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Lint code
+npm run lint
+```
+
+## 🎨 Styling
+
+The project uses **Tailwind CSS** for styling with custom extensions for:
+- Custom fonts: Inter (sans-serif) and Playfair Display (serif)
+- Custom animations: fadeIn, slideInFromBottom, zoomIn
+- Custom scrollbar styling
+
+## 🤖 AI Styling Feature
+
+The AI Stylist uses Google's Gemini API to provide personalized jewelry recommendations. Make sure to:
+
+1. Get your API key from [Google AI Studio](https://aistudio.google.com/app/apikey)
+2. Add it to your `.env` file as `VITE_API_KEY`
+
+## 🌐 Routing
+
+- `/` - Home page
+- `/collections` - All collections
+- `/shop` - Shop/Best sellers
+- `/bespoke` - Bespoke design consultation
+- `/story` - Brand story
+
+## 📝 License
+
+This project is part of Aurelia Luxe brand
 import reactDom from 'eslint-plugin-react-dom'
 
 export default defineConfig([
