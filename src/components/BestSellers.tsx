@@ -1,9 +1,24 @@
 
-import React, { useMemo } from 'react';
+import React, { useMemo, Fragment } from 'react';
 import { SIGNATURE_PIECES } from '../constants';
-import { Heart, X, ArrowRight } from 'lucide-react';
+import { Heart, ArrowRight, ChevronDown } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
 import { Link, useNavigate } from 'react-router-dom';
+import { Listbox, Transition } from '@headlessui/react';
+
+const PRICE_OPTIONS = [
+  { label: 'All Prices', id: 'all', range: [0, 10000] as [number, number] },
+  { label: 'Under $1,000', id: 'under-1000', range: [0, 1000] as [number, number] },
+  { label: '$1,000 — $3,000', id: '1000-3000', range: [1000, 3000] as [number, number] },
+  { label: 'Above $3,000', id: 'above-3000', range: [3000, 10000] as [number, number] },
+];
+
+const SORT_OPTIONS = [
+  { label: 'Featured', id: 'featured' },
+  { label: 'Price: Low to High', id: 'price-low' },
+  { label: 'Price: High to Low', id: 'price-high' },
+  { label: 'New Arrivals', id: 'newest' },
+];
 
 interface BestSellersProps {
   isFullPage?: boolean;
@@ -13,14 +28,38 @@ const BestSellers: React.FC<BestSellersProps> = ({ isFullPage = false }) => {
   const { addToCart, toggleWishlist, isInWishlist, activeCategory, setActiveCategory } = useAppContext();
   const navigate = useNavigate();
 
+  const [selectedPrice, setSelectedPrice] = React.useState(PRICE_OPTIONS[0]);
+  const [selectedSort, setSelectedSort] = React.useState(SORT_OPTIONS[0]);
+
+  const parsePrice = (priceStr: string) => {
+    return parseFloat(priceStr.replace(/[^0-9.]/g, ''));
+  };
+
   const filteredPieces = useMemo(() => {
-    const pieces = activeCategory
+    let pieces = activeCategory
       ? SIGNATURE_PIECES.filter(p => p.category === activeCategory)
       : SIGNATURE_PIECES;
 
+    // Applying price filter
+    if (isFullPage) {
+      pieces = pieces.filter(p => {
+        const price = parsePrice(p.price);
+        return price >= selectedPrice.range[0] && price <= selectedPrice.range[1];
+      });
+
+      // Applying sort
+      if (selectedSort.id === 'price-low') {
+        pieces = [...pieces].sort((a, b) => parsePrice(a.price) - parsePrice(b.price));
+      } else if (selectedSort.id === 'price-high') {
+        pieces = [...pieces].sort((a, b) => parsePrice(b.price) - parsePrice(a.price));
+      } else if (selectedSort.id === 'newest') {
+        pieces = [...pieces].reverse(); // Mock newest
+      }
+    }
+
     // Limit to 8 items on home page (isFullPage is false)
     return isFullPage ? pieces : pieces.slice(0, 8);
-  }, [activeCategory, isFullPage]);
+  }, [activeCategory, isFullPage, selectedPrice, selectedSort]);
 
   const handleAddToCart = (product: typeof SIGNATURE_PIECES[0]) => {
     addToCart(product);
@@ -35,30 +74,112 @@ const BestSellers: React.FC<BestSellersProps> = ({ isFullPage = false }) => {
             <h3 className="text-3xl md:text-5xl serif">
               {activeCategory ? `The ${activeCategory} Series` : isFullPage ? 'The Full Collection' : 'Signature Creations'}
             </h3>
-
-            {activeCategory && (
-              <button
-                onClick={() => setActiveCategory(null)}
-                className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-[#B5B5B5] hover:text-[#0F0F0F] transition-colors group"
-              >
-                Show All Designs
-                <X size={10} className="group-hover:rotate-90 transition-transform" />
-              </button>
-            )}
           </div>
-          <div className="w-12 h-[1px] bg-[#0F0F0F] mx-auto mt-6 mb-8" />
-          <p className="text-[#2B2B2B] font-light tracking-wide max-w-lg mx-auto leading-relaxed text-[15px]">
+          <div className="w-12 h-[1px] bg-brand-black mx-auto mt-6 mb-8" />
+          <p className="text-brand-gray font-light tracking-wide max-w-lg mx-auto leading-relaxed text-[15px]">
             {activeCategory
               ? `Explore our curated selection of fine ${activeCategory.toLowerCase()}, each defined by exceptional purity and light.`
               : 'Timeless designs for the most significant moments in life.'}
           </p>
         </div>
 
+        {isFullPage && (
+          <div className="flex flex-wrap items-center justify-between gap-8 mb-16 pb-8 border-b border-brand-black/5 ring-offset-white">
+            {/* Category Filters */}
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="text-[9px] uppercase tracking-[0.3em] text-brand-muted mr-2">Category</span>
+              {['All', 'Rings', 'Necklaces', 'Earrings', 'Bracelets'].map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat === 'All' ? null : cat)}
+                  className={`text-[10px] uppercase tracking-[0.2em] px-5 py-2.5 transition-all duration-500 border ${(activeCategory === cat || (cat === 'All' && !activeCategory))
+                    ? 'bg-brand-black text-white border-brand-black'
+                    : 'text-brand-black border-transparent hover:border-brand-black/20'
+                    }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+
+            {/* Price & Sort Filters with Headless UI */}
+            <div className="flex flex-wrap items-center gap-10">
+              {/* Price Filter */}
+              <div className="flex items-center gap-4 border-b border-transparent hover:border-brand-black/10 pb-1 transition-all">
+                <span className="text-[9px] uppercase tracking-[0.3em] text-brand-muted">Price</span>
+                <Listbox value={selectedPrice} onChange={setSelectedPrice}>
+                  <div className="relative">
+                    <Listbox.Button className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] font-medium focus:outline-none min-w-[120px] text-left">
+                      <span>{selectedPrice.label}</span>
+                      <ChevronDown size={12} strokeWidth={1.5} className="ml-auto mt-0.5" />
+                    </Listbox.Button>
+                    <Transition
+                      as={Fragment}
+                      leave="transition ease-in duration-100"
+                      leaveFrom="opacity-100"
+                      leaveTo="opacity-0"
+                    >
+                      <Listbox.Options className="absolute z-50 mt-4 w-56 bg-white border border-brand-black/5 p-2 shadow-2xl focus:outline-none overflow-hidden">
+                        {PRICE_OPTIONS.map((option) => (
+                          <Listbox.Option
+                            key={option.id}
+                            className={({ active, selected }) =>
+                              `relative cursor-pointer select-none py-3 px-4 text-[9px] uppercase tracking-[0.2em] transition-colors ${active ? 'bg-brand-soft' : ''
+                              } ${selected ? 'font-bold' : 'font-light'}`
+                            }
+                            value={option}
+                          >
+                            {option.label}
+                          </Listbox.Option>
+                        ))}
+                      </Listbox.Options>
+                    </Transition>
+                  </div>
+                </Listbox>
+              </div>
+
+              {/* Sort Filter */}
+              <div className="flex items-center gap-4 border-b border-transparent hover:border-brand-black/10 pb-1 transition-all">
+                <span className="text-[9px] uppercase tracking-[0.3em] text-brand-muted">Sort</span>
+                <Listbox value={selectedSort} onChange={setSelectedSort}>
+                  <div className="relative">
+                    <Listbox.Button className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] font-medium focus:outline-none min-w-[140px] text-left">
+                      <span>{selectedSort.label}</span>
+                      <ChevronDown size={12} strokeWidth={1.5} className="ml-auto mt-0.5" />
+                    </Listbox.Button>
+                    <Transition
+                      as={Fragment}
+                      leave="transition ease-in duration-100"
+                      leaveFrom="opacity-100"
+                      leaveTo="opacity-0"
+                    >
+                      <Listbox.Options className="absolute z-50 mt-4 right-0 w-56 bg-white border border-black/5 p-2 shadow-2xl focus:outline-none overflow-hidden">
+                        {SORT_OPTIONS.map((option) => (
+                          <Listbox.Option
+                            key={option.id}
+                            className={({ active, selected }) =>
+                              `relative cursor-pointer select-none py-3 px-4 text-[9px] uppercase tracking-[0.2em] transition-colors ${active ? 'bg-brand-soft' : ''
+                              } ${selected ? 'font-bold' : 'font-light'}`
+                            }
+                            value={option}
+                          >
+                            {option.label}
+                          </Listbox.Option>
+                        ))}
+                      </Listbox.Options>
+                    </Transition>
+                  </div>
+                </Listbox>
+              </div>
+            </div>
+          </div>
+        )}
+
         {filteredPieces.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
             {filteredPieces.map((product) => (
               <Link key={product.id} to={`/product/${product.id}`} className="group cursor-pointer animate-in fade-in slide-in-from-bottom-4 duration-700">
-                <div className="relative aspect-square overflow-hidden bg-[#FBFBFB] mb-6">
+                <div className="relative aspect-square overflow-hidden bg-brand-silk mb-6">
                   <img
                     src={product.image}
                     alt={product.name}
@@ -86,26 +207,26 @@ const BestSellers: React.FC<BestSellersProps> = ({ isFullPage = false }) => {
                         e.stopPropagation();
                         handleAddToCart(product);
                       }}
-                      className="w-full py-3 text-[10px] uppercase tracking-[0.3em] bg-[#0F0F0F] text-white hover:bg-[#2B2B2B] transition-colors"
+                      className="w-full py-3 text-[10px] uppercase tracking-[0.3em] bg-brand-black text-white hover:bg-brand-gray transition-colors"
                     >
                       Add to Bag
                     </button>
                   </div>
                 </div>
                 <div className="text-center">
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-[#B5B5B5] mb-2">{product.category}</p>
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-brand-muted mb-2">{product.category}</p>
                   <h4 className="text-[15px] font-medium tracking-tight mb-2 group-hover:underline underline-offset-4 decoration-1">{product.name}</h4>
-                  <p className="text-[13px] font-light text-[#2B2B2B]">{product.price}</p>
+                  <p className="text-[13px] font-light text-brand-gray">{product.price}</p>
                 </div>
               </Link>
             ))}
           </div>
         ) : (
           <div className="py-20 text-center animate-in fade-in duration-500">
-            <p className="serif italic text-[#B5B5B5] mb-6">No pieces currently found in this category.</p>
+            <p className="serif italic text-brand-muted mb-6">No pieces currently found in this category.</p>
             <button
               onClick={() => setActiveCategory(null)}
-              className="text-[10px] uppercase tracking-[0.2em] border border-[#0F0F0F] px-8 py-3 hover:bg-[#0F0F0F] hover:text-white transition-all"
+              className="text-[10px] uppercase tracking-[0.2em] border border-brand-black px-8 py-3 hover:bg-brand-black hover:text-white transition-all"
             >
               Browse Full Collection
             </button>
@@ -118,7 +239,7 @@ const BestSellers: React.FC<BestSellersProps> = ({ isFullPage = false }) => {
               to="/shop"
               className="inline-flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] group"
             >
-              <span className="border-b border-[#0F0F0F] pb-1 group-hover:opacity-50 transition-opacity">Enter the Full Catalog</span>
+              <span className="border-b border-brand-black pb-1 group-hover:opacity-50 transition-opacity">Enter the Full Catalog</span>
               <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform" />
             </Link>
           </div>

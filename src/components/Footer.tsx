@@ -20,14 +20,14 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#0F0F0F] text-white pt-24 pb-12 px-6">
+    <footer className="bg-brand-black text-white pt-24 pb-12 px-6">
       <div className="max-w-[1440px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
           <div className="space-y-6">
             <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
               <h2 className="text-2xl serif uppercase tracking-[0.2em] hover:opacity-70 transition-opacity">Aurelia Luxe</h2>
             </Link>
-            <p className="text-[13px] text-[#B5B5B5] leading-loose max-w-xs font-light">
+            <p className="text-[13px] text-brand-muted leading-loose max-w-xs font-light">
               Crafting timeless luxury since 1984. Minimalist design, ethical sourcing, and unparalleled craftsmanship.
             </p>
             <div className="flex gap-6">
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
 
           <div>
             <h4 className="text-[11px] uppercase tracking-[0.3em] font-medium mb-8 text-white/90">Client Services</h4>
-            <ul className="space-y-4 text-[13px] text-[#B5B5B5] font-light">
+            <ul className="space-y-4 text-[13px] text-brand-muted font-light">
               <li><button onClick={() => handleInfoClick('/bespoke')} className="hover:text-white transition-colors">Contact Us</button></li>
               <li><button onClick={() => handleInfoClick('/bespoke')} className="hover:text-white transition-colors">Book an Appointment</button></li>
               <li><button onClick={() => handleInfoClick('/story')} className="hover:text-white transition-colors">Ring Size Guide</button></li>
@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
 
           <div>
             <h4 className="text-[11px] uppercase tracking-[0.3em] font-medium mb-8 text-white/90">Collections</h4>
-            <ul className="space-y-4 text-[13px] text-[#B5B5B5] font-light">
+            <ul className="space-y-4 text-[13px] text-brand-muted font-light">
               <li><button onClick={() => handleCategoryClick(null)} className="hover:text-white transition-colors">All Jewelry</button></li>
               <li><button onClick={() => handleCategoryClick('Bracelets')} className="hover:text-white transition-colors">Tennis Bracelets</button></li>
               <li><button onClick={() => handleCategoryClick('Bracelets')} className="hover:text-white transition-colors">Bangles & Cuffs</button></li>
@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
 
           <div>
             <h4 className="text-[11px] uppercase tracking-[0.3em] font-medium mb-8 text-white/90">Boutique News</h4>
-            <p className="text-[13px] text-[#B5B5B5] mb-6 font-light">
+            <p className="text-[13px] text-brand-muted mb-6 font-light">
               Subscribe to receive updates on new collections and exclusive events.
             </p>
             <form onSubmit={(e) => e.preventDefault()} className="flex">

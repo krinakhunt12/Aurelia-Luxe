@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
-button, a{
+@theme {
+    --color-brand-black: #0F0F0F;
+    --color-brand-gray: #2B2B2B;
+    --color-brand-muted: #B5B5B5;
+    --color-brand-soft: #FAFAFA;
+    --color-brand-silk: #FBFBFB;
+    --color-brand-border: #E5E5E5;
+
+    --font-serif: "Playfair Display", serif;
+    --font-sans: "Inter", sans-serif;
+}
+
+button,
+a {
     cursor: pointer;
 }

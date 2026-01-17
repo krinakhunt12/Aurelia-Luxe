@@ -129,7 +129,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, darkTheme }) => {
           >
             <Heart size={20} strokeWidth={1.5} />
             {wishlist.length > 0 && (
-              <span className="absolute -top-1 -right-1 w-2 h-2 bg-[#B5B5B5] rounded-full animate-pulse" />
+              <span className="absolute -top-1 -right-1 w-2 h-2 bg-brand-muted rounded-full animate-pulse" />
             )}
           </button>
 

@@ -14,20 +14,20 @@ interface SideDrawerProps {
   emptyMessage: string;
 }
 
-const SideDrawer: React.FC<SideDrawerProps> = ({ 
-  isOpen, 
-  onClose, 
-  title, 
-  items, 
-  onRemove, 
-  onAction, 
+const SideDrawer: React.FC<SideDrawerProps> = ({
+  isOpen,
+  onClose,
+  title,
+  items,
+  onRemove,
+  onAction,
   actionLabel,
   emptyMessage
 }) => {
   return (
     <>
-      <div 
-        className={`fixed inset-0 z-[80] bg-[#0F0F0F]/40 backdrop-blur-sm transition-opacity duration-500 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} 
+      <div
+        className={`fixed inset-0 z-[80] bg-brand-black/40 backdrop-blur-sm transition-opacity duration-500 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         onClick={onClose}
       />
       <div className={`fixed top-0 right-0 z-[90] h-full w-full max-w-md bg-white shadow-2xl transition-transform duration-500 ease-out transform ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
@@ -61,11 +61,11 @@ const SideDrawer: React.FC<SideDrawerProps> = ({
                           <Trash2 size={14} strokeWidth={1.5} />
                         </button>
                       </div>
-                      <p className="text-[12px] text-[#B5B5B5] mb-4 uppercase tracking-widest">{item.price}</p>
+                      <p className="text-[12px] text-brand-muted mb-4 uppercase tracking-widest">{item.price}</p>
                       {onAction && actionLabel && (
-                        <button 
+                        <button
                           onClick={() => onAction(item)}
-                          className="text-[10px] uppercase tracking-[0.2em] border border-[#0F0F0F] px-4 py-2 hover:bg-[#0F0F0F] hover:text-white transition-all"
+                          className="text-[10px] uppercase tracking-[0.2em] border border-brand-black px-4 py-2 hover:bg-brand-black hover:text-white transition-all"
                         >
                           {actionLabel}
                         </button>
@@ -78,14 +78,14 @@ const SideDrawer: React.FC<SideDrawerProps> = ({
           </div>
 
           {items.length > 0 && title === 'Shopping Bag' && (
-            <div className="p-8 bg-[#FAFAFA] border-t border-[#F5F5F5]">
+            <div className="p-8 bg-brand-soft border-t border-brand-soft">
               <div className="flex justify-between items-end mb-8">
-                <p className="text-[11px] uppercase tracking-[0.3em] text-[#B5B5B5]">Subtotal</p>
+                <p className="text-[11px] uppercase tracking-[0.3em] text-brand-muted">Subtotal</p>
                 <p className="text-xl serif">
                   ${items.reduce((acc, curr) => acc + parseInt(curr.price.replace(/[^0-9]/g, '')), 0).toLocaleString()}
                 </p>
               </div>
-              <button className="w-full py-4 bg-[#0F0F0F] text-white text-[11px] uppercase tracking-[0.3em] hover:bg-[#2B2B2B] transition-colors">
+              <button className="w-full py-4 bg-brand-black text-white text-[11px] uppercase tracking-[0.3em] hover:bg-brand-gray transition-colors">
                 Proceed to Checkout
               </button>
             </div>

@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
 
 
   return (
-    <section id="hero" className="relative h-screen min-h-[700px] w-full bg-[#0F0F0F] flex items-center justify-center overflow-hidden z-10">
+    <section id="hero" className="relative h-screen min-h-[700px] w-full bg-brand-black flex items-center justify-center overflow-hidden z-10">
       {/* Background Image Layer */}
       <div
         className={`absolute inset-0 z-0 transition-transform duration-[10000ms] ease-out ${isVisible ? 'scale-100' : 'scale-110'}`}
@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
       />
 
       {/* Dynamic Light Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0F0F0F]/10 to-[#0F0F0F] z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-black/10 to-brand-black z-[1]" />
 
       <div className="relative z-10 container mx-auto px-6 flex flex-col items-center">
         {/* Floating High-End Product Image with Animation */}
@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
               alt="Signature Diamond Piece"
               className="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700 scale-110 hover:scale-100"
             />
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#0F0F0F]/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-brand-black/40 to-transparent" />
           </div>
         </div>
 
@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
             >
               <div className="absolute inset-0 border border-white/40 group-hover:border-white transition-colors duration-500" />
               <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
-              <span className="relative z-10 text-[11px] uppercase tracking-[0.3em] text-white group-hover:text-[#0F0F0F] transition-colors duration-500">
+              <span className="relative z-10 text-[11px] uppercase tracking-[0.3em] text-white group-hover:text-brand-black transition-colors duration-500">
                 Explore Collection
               </span>
             </button>
